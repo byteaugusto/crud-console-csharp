@@ -1,86 +1,68 @@
-# CRUD em C# (Console)
+# 🚀 Sistema CRUD de Nomes em C#
 
-Projeto de CRUD desenvolvido em C# com persistência em arquivo (.txt).
+## 💼 Projeto voltado para desenvolvimento profissional
 
-## 📌 Funcionalidades
-- Cadastro de nomes
-- Listagem com índice
-- Edição de dados
-- Remoção com confirmação
-- Salvamento automático em arquivo# 💻 CRUD em C# (Console)
+Desenvolvi este projeto como parte da minha evolução na área de desenvolvimento, com foco em consolidar fundamentos essenciais para atuação como desenvolvedor.
 
-Projeto de um sistema CRUD (Create, Read, Update, Delete) desenvolvido em C# com persistência de dados em arquivo `.txt`.
+A aplicação consiste em um sistema de CRUD (Create, Read, Update, Delete) em C#, com persistência de dados em arquivo local, simulando operações comuns do dia a dia em sistemas reais.
 
 ---
 
-## 🚀 Funcionalidades
+## 🔧 Principais funcionalidades
 
-* ✅ Cadastro de nomes
-* 📋 Listagem com índice
-* ✏️ Edição de registros
-* ❌ Remoção com confirmação
-* 💾 Salvamento automático em arquivo
-
----
-
-## 🛠 Tecnologias utilizadas
-
-* C#
-* .NET
-* System.IO (manipulação de arquivos)
+* Cadastro de nomes com validação de entrada
+* Listagem estruturada com índice
+* Edição de registros existentes
+* Remoção com confirmação
+* Persistência em arquivo `.txt`
+* Carregamento automático dos dados ao iniciar
 
 ---
 
-## 📸 Exemplo de uso
+## 🧠 Tecnologias e conceitos aplicados
+
+* C# (.NET)
+* Programação Orientada a Objetos (POO)
+* Manipulação de arquivos com `System.IO`
+* Estruturas de dados (`List<T>`)
+* Validação de dados de entrada
+* Separação de responsabilidades (Repository Pattern básico)
+
+---
+
+## 🏗️ Estrutura do projeto
 
 ```
-1- cadastrar novo nome  
-2- remover nome da lista  
-3- mostrar nomes na lista  
-4- editar nome na lista  
-6- sair  
+Crud/
+ ├── Program.cs
+ ├── Nomes.cs
+ └── ArquivoRepository.cs
+```
+
+> A classe `Nomes` representa a entidade principal do sistema, responsável por armazenar os dados manipulados no CRUD.
+> Crud/
+> ├── Program.cs
+> ├── Nomes.cs
+> └── ArquivoRepository.cs
+
 ```
 
 ---
 
 ## 🎯 Objetivo
 
-Este projeto foi desenvolvido com o objetivo de praticar:
-
-* Lógica de programação
-* Estruturas de dados (List<T>)
-* Manipulação de arquivos
-* Interação com usuário via console
-
----
-
-## 📂 Como executar
-
-1. Clone o repositório:
-
-```
-git clone https://github.com/byteaugusto/crud-console-csharp.git
-```
-
-2. Abra no Visual Studio
-3. Execute o projeto
+Este projeto teve como objetivo praticar a construção de aplicações estruturadas, aplicando boas práticas de organização de código e preparando a base para evoluções futuras, como APIs e aplicações mais robustas.
 
 ---
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Matheus Augusto
+Matheus Augusto
 
+---
 
-## 🛠 Tecnologias
-- C#
-- .NET
-- System.IO (manipulação de arquivos)
+## 🔗 Observação
 
-## 🎯 Objetivo
-Praticar lógica de programação e manipulação de dados em aplicações console.
+Projeto desenvolvido com foco em aprendizado contínuo e preparação para oportunidades de estágio na área de desenvolvimento.
 
-## 🚀 Como executar
-1. Clone o repositório
-2. Abra no Visual Studio
-3. Execute o projeto
+```
