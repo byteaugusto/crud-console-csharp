@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Crud
 {
-    public class Nomes
+    public class Nome
     {
-        public string Nome { get; set; }
+        public string Name { get; set; }
     }
 }

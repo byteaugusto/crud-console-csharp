@@ -8,28 +8,28 @@ namespace Crud
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            string caminho = "nomes.txt";
-            List<Nomes> list = new List<Nomes>();
-            ArquivoRepository.Carregar(list, caminho);
+            int option = 0;
+            string filepath = "nome.txt";
+            List<Nome> names = new List<Nome>();
+            ArquivoRepository.Carregar(names, filepath);
 
-            while (i != 6)
+            while (option != 6)
             {
                 Console.WriteLine("===== MENU =====\r\n1 - Cadastrar nome\r\n2 - Remover nome\r\n3 - Listar nomes\r\n4 - Editar nome\r\n6 - Sair\r\n================\r\nEscolha uma opção:");
-                if (!int.TryParse(Console.ReadLine(), out i))
+                if (!int.TryParse(Console.ReadLine(), out option))
                 {
                     Console.WriteLine("Digite um número válido!");
                     continue;
                 }
-                switch (i)
+                switch (option)
                 {
                     case 1:
-                        Nomes nomes = new Nomes();
+                        Nome nome = new Nome();
                         Console.WriteLine("=== CADASTRAR NOME ===\r\nDigite um nome: ");
-                        nomes.Nome = Console.ReadLine();
-                        list.Add(nomes);
-                        ArquivoRepository.Salvar(list, caminho);
-                        NomeIndice(list);
+                        nome.Name = Console.ReadLine();
+                        names.Add(nome);
+                        ArquivoRepository.Salvar(names, filepath);
+                        NomeIndice(names);
                         Console.WriteLine("Nome cadastrado com sucesso!");
                         Console.WriteLine("Pressione qualquer tecla para continuar...");
                         Console.ReadKey();
@@ -38,7 +38,7 @@ namespace Crud
                         case 2:
                         int remove = 0;
                         int numeroremocao = 0;
-                        if (list.Count == 0)
+                        if (names.Count == 0)
                         {
                             Console.WriteLine("não há nada na lista");
                             Console.WriteLine("Pressione qualquer tecla para continuar...");
@@ -49,7 +49,7 @@ namespace Crud
                         else
                         {
                             Console.WriteLine("=== REMOVER NOME ===");
-                            NomeIndice(list);
+                            NomeIndice(names);
                             Console.Write("Digite o índice do nome que deseja remover: ");
                                 if (!int.TryParse(Console.ReadLine(), out remove))
                                 {
@@ -59,14 +59,14 @@ namespace Crud
                                     Console.Clear();
                                     break;
                                 }
-                                if (remove >= 0 && remove < list.Count)
+                                if (remove >= 0 && remove < names.Count)
                                 {
                                 Console.WriteLine("tem certeza que quer remover este nome? 1- sim 2- não");
                                 int.TryParse(Console.ReadLine(), out numeroremocao);
                                 if (numeroremocao == 1)
                                 {
-                                    list.RemoveAt(remove);
-                                    ArquivoRepository.Salvar(list, caminho);
+                                    names.RemoveAt(remove);
+                                    ArquivoRepository.Salvar(names, filepath);
                                     Console.WriteLine("Nome removido!");
                                     Console.WriteLine("Pressione qualquer tecla para continuar...");
                                     Console.ReadKey();
@@ -90,7 +90,7 @@ namespace Crud
                         }
                         break;
                     case 3:
-                        if (list.Count == 0)
+                        if (names.Count == 0)
                         {
                             Console.WriteLine("=== LISTAR NOMES ===");
                             Console.WriteLine("não há nada na lista");
@@ -102,7 +102,7 @@ namespace Crud
                         else
                         {
                             Console.WriteLine("=== LISTAR NOMES ===");
-                            NomeIndice(list);
+                            NomeIndice(names);
                             Console.WriteLine("Pressione qualquer tecla para continuar...");
                             Console.ReadKey();
                             Console.Clear();
@@ -112,7 +112,7 @@ namespace Crud
                         int edit = 0;
                         int numeroedit = 0;
                         string novonome;
-                        if (list.Count == 0)
+                        if (names.Count == 0)
                         {
                             Console.WriteLine("não há nada na lista");
                             Console.WriteLine("Pressione qualquer tecla para continuar...");
@@ -122,7 +122,7 @@ namespace Crud
                         }
                         else
                         {
-                            NomeIndice(list);
+                            NomeIndice(names);
                             Console.WriteLine("=== EDITAR NOME ===");
                             Console.Write("Digite o índice do nome que deseja editar: ");
                             if (!int.TryParse(Console.ReadLine(), out edit))
@@ -133,7 +133,7 @@ namespace Crud
                                     Console.Clear();
                                     break;                                
                             }
-                            if (edit >= 0 && edit < list.Count)
+                            if (edit >= 0 && edit < names.Count)
                                 {
                                 Console.WriteLine("tem certeza que quer editar este nome? 1- sim 2- não");
                                 if (!int.TryParse(Console.ReadLine(), out numeroedit))
@@ -148,8 +148,8 @@ namespace Crud
                                 {
                                     Console.WriteLine("digite o novo nome");
                                     novonome = Console.ReadLine();
-                                    list[edit].Nome = novonome;
-                                    ArquivoRepository.Salvar(list, caminho);
+                                    names[edit].Name = novonome;
+                                    ArquivoRepository.Salvar(names, filepath);
                                     Console.WriteLine("Nome atualizado!");
                                     Console.WriteLine("Pressione qualquer tecla para continuar...");
                                     Console.ReadKey();
@@ -181,11 +181,11 @@ namespace Crud
                         break;
                 }
              }
-        }static void NomeIndice(List<Nomes> list)
+        }static void NomeIndice(List<Nome> list)
         {
             for (int indice = 0; indice < list.Count; indice++)
             {
-                Console.WriteLine(indice + " - " + list[indice].Nome);
+                Console.WriteLine(indice + " - " + list[indice].Name);
             }
         }
     }
